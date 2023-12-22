@@ -1,4 +1,4 @@
-import 'dart:math';
+
 import 'package:ana_zah2t/models/weather_model.dart';
 import 'package:dio/dio.dart';
 
@@ -25,7 +25,7 @@ class WeatherServices
     }
     catch(e)
     {
-      print(e.toString() );
+      print(e.toString());
        throw Exception('oop there was an error, try later');
     }
     

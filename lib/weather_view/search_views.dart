@@ -35,7 +35,7 @@ class SearchView extends StatelessWidget {
               suffixIcon:  Icon(Icons.search),
               hintText: 'Enter your city',
               label: Text(
-                'search',
+                'Search',
                 style: TextStyle(
                   fontSize: 20,
                 ),

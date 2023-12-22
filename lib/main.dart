@@ -1,7 +1,6 @@
 import 'package:ana_zah2t/cubits/get_Weather_cubit/getWeatherStates.dart';
 import 'package:ana_zah2t/cubits/get_Weather_cubit/get_weather_cubit.dart';
 import 'package:ana_zah2t/home_view.dart';
-import 'package:ana_zah2t/models/weather_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
