@@ -19,8 +19,9 @@ class _MyWidgetState extends State<MyWidget> {
   
     return Scaffold(
       appBar: AppBar(
+        
       title:const  Text(
-        'Weather app',
+        'Weather App',
       ),
         actions: [
         IconButton(
@@ -39,6 +40,7 @@ class _MyWidgetState extends State<MyWidget> {
         ),
         ),
       ],
+      
       ),
       body:BlocBuilder<GetWeatherCubit,WeatherState>(
         builder: (context, state)
@@ -53,23 +55,26 @@ class _MyWidgetState extends State<MyWidget> {
           }
           else 
           {
-            return Center(
-              child: Container(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                
-                  child: const Text(
-                    'opps there was an error \u{1F603} \u{1F923}',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w700,
-                      
-                    ),
-                    ),
-                ),
-              ),
-            );
-          }
+           return Center(
+             child: Padding(
+              padding: const EdgeInsets.all(16.0),
+            child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+            Image.asset('assets/images/ops.jpg'),
+            const SizedBox(height: 12.0),
+              const Text(
+            'Oops, there was an error ',
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+          ),
+        ],
+      ),
+    ),
+  );
+        }
+     
+          
+ 
 
         }
       ),
