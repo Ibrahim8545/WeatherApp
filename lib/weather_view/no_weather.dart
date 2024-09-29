@@ -9,19 +9,23 @@ class Noweather extends StatelessWidget {
 Widget build(BuildContext context)
  {
   return  Padding(
-      padding:  EdgeInsets.symmetric(horizontal:16),
+      padding: const  EdgeInsets.symmetric(horizontal:16),
       child: Center(
         
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'there is no weather 😔 start',
+            ClipRRect(
+            //clipBehavior: Clip.antiAliasWithSaveLayer,
+            borderRadius: BorderRadius.circular(30),
+            child: Image.asset('assets/images/weathergif.jpg')),
+            const Text(
+              'there is no weather 😔 ',
               style: TextStyle(
                 fontSize: 30,
               ),
             ),
-            Text(
+           const  Text(
               'searching now 🔍',
                style: TextStyle(
                 fontSize: 30,

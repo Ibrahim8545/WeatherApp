@@ -17,66 +17,74 @@ class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
   
-    return Scaffold(
-      appBar: AppBar(
-        
-      title:const  Text(
-        'Weather App',
-      ),
-        actions: [
-        IconButton(
-          onPressed:()
-        {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context)
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.grey,
+        title:const  Text(
+          'Weather App',
+          style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
+          ),
+        ),
+          actions: [
+          IconButton(
+            onPressed:()
           {
-            // ignore: prefer_const_constructors
-            return SearchView();
-          }
-          ));
-
-        }, 
-        icon: const Icon(
-          Icons.search
-        ),
-        ),
-      ],
+            Navigator.of(context).push(MaterialPageRoute(builder: (context)
+            {
+              // ignore: prefer_const_constructors
+              return SearchView();
+            }
+            ));
       
-      ),
-      body:BlocBuilder<GetWeatherCubit,WeatherState>(
-        builder: (context, state)
-        {
-          if(state is IntialState)
-          {
-            return const Noweather();
-          }
-          else if(state is WaetherLoadedState)
-          {
-            return  infoWeather();
-          }
-          else 
-          {
-           return Center(
-             child: Padding(
-              padding: const EdgeInsets.all(16.0),
-            child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-            Image.asset('assets/images/ops.jpg'),
-            const SizedBox(height: 12.0),
-              const Text(
-            'Oops, there was an error ',
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+          }, 
+          icon: const Icon(
+            Icons.search,
+            color: Colors.white,
+          ),
           ),
         ],
+        
+        ),
+        body:BlocBuilder<GetWeatherCubit,WeatherState>(
+          builder: (context, state)
+          {
+            if(state is IntialState)
+            {
+              return const Noweather();
+            }
+            else if(state is WaetherLoadedState)
+            {
+              return  infoWeather();
+            }
+            else 
+            {
+             return Center(
+               child: Padding(
+                padding: const EdgeInsets.all(16.0),
+              child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+              Image.asset('assets/images/ops.jpg'),
+              const SizedBox(height: 12.0),
+                const Text(
+              'Oops, there was an error ',
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+            ),
+          ],
+        ),
       ),
-    ),
-  );
-        }
-     
-          
- 
-
-        }
+        );
+          }
+       
+            
+       
+      
+          }
+        ),
       ),
     );
   }

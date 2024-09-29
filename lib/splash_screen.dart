@@ -67,10 +67,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigatToHome() {
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) {
         // ignore: prefer_const_constructors
         return MyWidget();
-      }));
+      }), (route) => false);
     });
   }
 }
